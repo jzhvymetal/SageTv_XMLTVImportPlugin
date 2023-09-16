@@ -1,0 +1,1 @@
+sh /opt/sagetv/server/xmltv_src/ondocker_build_clean_sagetv.sh

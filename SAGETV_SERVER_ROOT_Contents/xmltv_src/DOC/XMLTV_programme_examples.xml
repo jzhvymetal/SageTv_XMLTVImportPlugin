@@ -1,0 +1,100 @@
+  <programme start="20221113233000 +0000" stop="20221114000000 +0000" channel="24.2">
+    <title>Answers With Bayless Conley</title>
+    <sub-title>But God Part 1</sub-title>
+    <desc>Bayless Conley offers clear and practical Bible teaching that helps viewers find answers for their life.</desc>
+    <category>Episode</category>
+    <category>Series</category>
+    <category>Religious</category>
+    <icon src="https://tmsimg.fancybits.co/assets/p21261186_b_h9_ad.jpg?w=720&amp;h=540"></icon>
+    <series-id system="tms">331557</series-id>
+    <date>20221113</date>
+    <episode-num system="tms">EP000866320142</episode-num>
+    <episode-num system="onscreen">E69</episode-num>
+    <new></new>
+    <credits>
+      <actor>Bayless Conley</actor>
+    </credits>
+  </programme>
+  
+    <programme start="20230908170000 +0000" stop="20230908180000 +0000" channel="EPG123.116223.schedulesdirect.org">
+    <title>Chef Curtis Stone</title>
+    <sub-title>Chef Curtis Stone</sub-title>
+    <desc>Chef Curtis Stone's collection of kitchenware that simplifies prep and makes cooking fun.</desc>
+    <credits>
+      <presenter>Curtis Stone</presenter>
+      <presenter>Valerie Stup</presenter>
+    </credits>
+    <date>20230908</date>
+    <category>Series</category>
+    <category>Shopping</category>
+    <language>en</language>
+    <icon src="http://MAINDVR:9009/image/cadef28482d836999ab2626577a3a628af0b323dfbc295ce6decb73366f4c37e.jpg" />
+    <episode-num system="dd_progid">EP02398553.0506</episode-num>
+    <episode-num system="xmltv_ns">2022.51.0/1</episode-num>
+    <new />
+    <subtitles type="teletext" />
+    <rating system="USA Parental Rating">
+      <value>TVG</value>
+    </rating>
+    <rating system="VCHIP">
+      <value>TV-G</value>
+    </rating>
+  </programme>
+  
+  	<programme start="20230907143000 +0000" stop="20230907150000 +0000" channel="I2.1.20454.zap2it.com">
+		<title lang="en">The Drew Barrymore Show</title>
+		<desc lang="en">Drew Barrymore presents human-interest stories, celebrity guests, lifestyle segments and field pieces, all driven by her infectious brand of humor and optimism.</desc>
+		<credits>
+			<producer>Drew Barrymore</producer>
+			<producer>Jason Kurtz</producer>
+			<producer>Chris Miller</producer>
+			<producer>Ember Truesdell</producer>
+			<presenter>Drew Barrymore</presenter>
+		</credits>
+		<date>20230907</date>
+		<category lang="en">Talk</category>
+		<category lang="en">Entertainment</category>
+		<length units="minutes">30</length>
+		<icon src="https://zap2it.tmsimg.com/assets/p18629596_b_v13_ab.jpg" />
+		<url>https://tvlistings.zap2it.com//overview.html?programSeriesId=SH03580089&amp;tmsId=EP035800890670</url>
+		<episode-num system="common">S03E327</episode-num>
+		<episode-num system="dd_progid">EP03580089.0670</episode-num>
+		<episode-num system="xmltv_ns">2.326.</episode-num>
+		<new />
+		<subtitles type="teletext" />
+		<rating>
+			<value>TV-G</value>
+		</rating>
+	</programme>
+	
+  <programme start="20220116040000 +0000" stop="20220116042900 +0000" channel="4.1">
+    <title>KFOR News 4 Saturday at 10pm</title>
+    <desc>The latest and most up-to-date news and &amp; weather from Oklahoma&#39;s News 4 KFOR-TV.</desc>
+    <category>Show</category>
+    <category>Series</category>
+    <category>News</category>
+    <icon src="https://tmsimg.fancybits.co/assets/p14500050_b_h9_aa.jpg?w=720&amp;h=540"></icon>
+    <series-id system="tms">14500050</series-id>
+    <date>20170902</date>
+    <episode-num system="tms">SH027689700000-1642305600</episode-num>
+    <new></new>
+  </programme>
+  
+	<programme start="20220522100000 +0000" stop="20220522110000 +0000" channel="tv-land-drama-ptv1">
+			<title lang="en">Diagnosis Murder</title>
+			<icon src="http://images.pluto.tv/series/612d1d802274a5001329ff23/tile.jpg?fill=blur&amp;fit=fill&amp;fm=jpg&amp;h=900&amp;q=75&amp;w=900"/>
+			<date>19970925</date>
+			<category lang="en">Series</category>
+			<series-id system="pluto">612d1d802274a5001329ff23</series-id>
+			<desc lang="en">Mark investigates when her older lover, a new state Supreme Court Justice, murders a teenage girl.</desc>
+			<category lang="en">Drama</category>
+			<category lang="en">Crime Drama</category>
+			<episode-num system="onscreen">S5E2</episode-num>
+			<episode-num system="pluto">614209e34b3ffb0014f4c55e</episode-num>
+			<episode-num system="original-air-date">1997-09-25T00:00:00.000Z</episode-num>
+			<category lang="en">Crime</category>
+			<category lang="en">Crime drama</category>
+			<category lang="en">Drama</category>
+			<sub-title lang="en">Open and Shut</sub-title>
+
+	</programme>

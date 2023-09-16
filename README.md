@@ -1,2 +1,25 @@
-# SageTv_XMLTVImportPlugin
-SageTv XMLTV Inport Plugin
+1.  Stop SageTV Server
+2.  Rename on add/modify/ xmltv_EXAMPLE.properties examples
+3.  Copy all files and folder contents(not folder) of folder SAGETV_SERVER_ROOT to SageTV folder.  Only Jar and *.proerties are required if not compiling required
+4.  Add the following line in Sage.properties epg/epg_import_plugin=xmltv.XMLTVImportPlugin
+5.  Start SageTV Server
+6.  Monitor in server folder xmltv.log, sagetv_0.txt,Sage.properties.  If epg/epg_import_plugin=xmltv.XMLTVImportPlugin is removed from Sage.properties something is installed not correctly
+7.  In SageTV guide setup use XMLTV with zipcode 00000.  If ask for license use TRIAL
+
+
+#######Commnds for UnRaid Docker to Moditfy Sage.properties for Plugin 
+# Stop Sage Server 
+sudo -E "PATH=$PATH" -u sagetv /usr/local/bin/stopsage &
+# Property Setting for EPG Plugin 
+sudo sed -i 'epg/epg_import_plugin' /opt/sagetv/server/Sage.properties
+sudo echo 'epg/epg_import_plugin=xmltv.XMLTVImportPlugin' >>  /opt/sagetv/server/Sage.properties
+# Start Sage Server 
+sudo -E "PATH=$PATH" -u sagetv /usr/local/bin/startsage &
+
+#########Commnds for UnRaid Docker Compile of Plugin
+ssh unraid server
+docker exec -it sagetvopen-sagetv-server-java11_TEST  /bin/bash
+cd /opt/sagetv/server/xmltv_src
+###Run one of the following
+sh ondocker_build.sh 
+sh ondocker_build_clean_sagetv.sh
