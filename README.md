@@ -1,7 +1,7 @@
 # How to install Plugin with SageTV 
 1.  Stop SageTV Server
 2.  Rename on add/modify/ xmltv_EXAMPLE.properties examples
-3.  Copy all files and folder contents(not folder) of folder SAGETV_SERVER_ROOT to SageTV folder.  Only Jar and *.proerties are required if not compiling required
+3.  Copy all files and folder contents(not folder) of folder SAGETV_SERVER_ROOT to SageTV folder.  Only Jar and *.properties are required if not compiling required
 4.  Add the following line in Sage.properties epg/epg_import_plugin=xmltv.XMLTVImportPlugin
 5.  Start SageTV Server
 6.  Monitor in server folder xmltv.log, sagetv_0.txt,Sage.properties.  If epg/epg_import_plugin=xmltv.XMLTVImportPlugin is removed from Sage.properties something is installed not correctly
