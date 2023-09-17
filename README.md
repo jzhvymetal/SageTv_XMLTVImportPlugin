@@ -22,3 +22,6 @@
 3.  Run one of the following
 - `` sh ondocker_build.sh ``
 - `` sh ondocker_build_clean_sagetv.sh ``
+
+# Example `.properties` for channel
+![](https://github.com/jzhvymetal/SageTv_XMLTVImportPlugin/blob/main/SAGETV_SERVER_ROOT_Contents/xmltv_src/DOC/XMLTV_prop.png)
