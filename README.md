@@ -16,7 +16,7 @@
 3.  Start Sage Server 
 - `` sudo -E "PATH=$PATH" -u sagetv /usr/local/bin/startsage & ``
 
-# Using UnRaid Docker to compile of plugin
+# Using UnRaid Docker to compile plugin
 1.  ssh unraid server
 2.  ``docker exec -it sagetvopen-sagetv-server-java11_TEST  /bin/bash``
 3.  Run one of the following
