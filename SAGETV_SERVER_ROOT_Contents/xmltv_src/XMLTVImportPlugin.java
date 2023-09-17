@@ -1189,7 +1189,7 @@ public final class XMLTVImportPlugin implements sage.EPGImportPlugin,
                     try {
 						InputStream in;
 						// it double forward slash found it means a URL
-						if(xmltvFiles[i].toString().contains(":/")) 
+						if(xmltvFiles[i].toString().contains("://")) 
 						{
 							log("Downloading  " + xmltvFiles[i] + " to " + XMLTV_FILE);
 							downloadUsingNIO(xmltvFiles[i], XMLTV_FILE);
