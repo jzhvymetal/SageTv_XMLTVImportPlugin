@@ -92,6 +92,7 @@
 ##2.11 11/13/2022	
 1.  For Strings use isEmpty not isBlank
 ##3.0 9/16/2022
+
 1.  Change `xmltv.error.log` to `xmltv_debug.log` for SageTV access info.
 2.  Added a log file for each XMLTV configuration used: `xmltv_[config_name].log`.
 3.  Changed `getLoggerPrinter()`, `log()`, `closeLoggers()` for multiple logger files: `xmltv_[config_name].log` -> `log()` and `xmltv_debug.log` -> `logDebug.log`.
@@ -115,6 +116,8 @@
 20.  In `.properties` change option 'episode.name.add.episode.number' default to false
 21.  In `.properties` change option 'episode.name.add.part.number' default to false
 22.  Add special case for parsing channelDVR  <programme><episode-num system=placeholder />/>  and <programme><episode-num system=xmltv: />/>
+##3.0 10/26/2023
+1.  Fixed Year date on movie
 */
 package xmltv;
 
@@ -184,7 +187,7 @@ public final class XMLTVImportPlugin implements sage.EPGImportPlugin,
         ContentHandler, ErrorHandler {
 
     //The newline sequence.
-    private static final String ProgramVersion = "3.0";
+    private static final String ProgramVersion = "3.1";
 	//The newline sequence.
     private static final String NEWLINE = System.getProperty("line.separator");
 	//The date format used for logging. 
@@ -1482,7 +1485,7 @@ public final class XMLTVImportPlugin implements sage.EPGImportPlugin,
 			}
 			this.channel = null;
 		} else if (aQName.equals("programme")) {//Done Parsing Show 
-			if(this.show.date == null)  //Check if there is vaild date 
+			if(this.show.date == null && this.show.year==null)  //Check if there is vaild date 
 			{
 				if(this.show.previous_start!= null)	//Use previous start if no date set
 					this.show.date=this.show.previous_start;
@@ -1491,7 +1494,7 @@ public final class XMLTVImportPlugin implements sage.EPGImportPlugin,
 						this.show.date=this.show.start; //If airdate is null it means it is new or live
 			}
 			
-			if(this.show.date != null)
+			if(this.show.date != null && this.show.year==null )
 			{
 				SimpleDateFormat formatYear = new SimpleDateFormat("yyyy");
 				this.show.year = formatYear.format(this.show.date);
@@ -1527,15 +1530,25 @@ public final class XMLTVImportPlugin implements sage.EPGImportPlugin,
 			addPersonToShow(this.text.toString(), this.init.guestRole, "Guest");
 		} else if (aQName.equals("date")) {
 			String date = this.text.toString();
-			if (date.length() >= 8) {
-				try {
+			try
+			{
+			
+				if (date.length() >= 8) 
+				{
 					this.show.date = DF_DAY.parse(date.substring(0, 8));						
-				} catch (ParseException e) {
-					this.show.date=null;
-					log(e);
+				} 
+				
+				if (date.length() == 4) 
+				{
+					this.show.year = date;						
 				}
+	
 			}
-			else this.show.date=null;
+			catch (ParseException e) 
+			{
+				this.show.date=null;
+				log(e);
+			}
 		   
 		} else if (aQName.equals("category")) {
 			String[] categories = this.text.toString().split("/");
@@ -2247,11 +2260,6 @@ public final class XMLTVImportPlugin implements sage.EPGImportPlugin,
                     bonus.add(this.show.parts + " parts");
                 }
 
-                String year = this.show.year;
-                if (this.init.dateYearDecoration != null && this.show.date != null) {
-                    year = this.init.dateYearDecoration.format(new Object[] {this.show.date}, new StringBuffer(), null).toString();
-                }
-
                 String showId = generateShowId(category);
 				
 				int stationId = this.channel.STVstationID.intValue();
@@ -2295,7 +2303,7 @@ public final class XMLTVImportPlugin implements sage.EPGImportPlugin,
 				*/
 				if(!this.guide.addShowPublic2(title, episodeName, desc, duration, toStringArray(categories),
 				  toStringArray(this.show.people), this.show.roles.toByteArray(), this.show.rating, toStringArray(this.show.expandedRatings),
-				  year, parentalRating, toStringArray(bonus), showId, this.show.language, originalAirDate,
+				  this.show.year, parentalRating, toStringArray(bonus), showId, this.show.language, originalAirDate,
 				  season.shortValue(), episode.shortValue(), false))
 				  {
 						throw new RuntimeException("Add show failed.");
